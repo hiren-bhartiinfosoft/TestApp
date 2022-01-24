@@ -6,10 +6,13 @@ import { LoadingController } from '@ionic/angular';
 })
 export class CommonService {
 
+  // variable declaration
   public loader: any = null;
   public loadingMessage: string = 'Please wait...';
 
+  // constructor of the class
   constructor(  private loadingCtrl: LoadingController,) { }
+
 // show loader
   async showLoader() {
     this.loader = await this.loadingCtrl.create({
@@ -17,6 +20,7 @@ export class CommonService {
     });
     this.loader.present(); 
   }
+  
 // hide loader
   hideLoader() {
     if (this.loader) {

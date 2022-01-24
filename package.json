@@ -22,6 +22,7 @@
     "@ionic-native/http": "^5.36.0",
     "@ionic-native/network": "^5.36.0",
     "@ionic/angular": "^6.0.0",
+    "ngx-drag-drop": "^13.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"

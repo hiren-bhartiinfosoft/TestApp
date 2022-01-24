@@ -6,8 +6,11 @@ import { AlertController, Platform } from '@ionic/angular';
 })
 export class AlertService {
 
+  // variable declaration
   alertOfService: any;
   private isAlertPresent:boolean = false;
+
+  // constructor of the class
   constructor(public alertCtrl: AlertController, public plt: Platform) { }
 
   // show alert dialog with dynamic title and message

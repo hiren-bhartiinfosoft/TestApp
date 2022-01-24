@@ -1,12 +1,15 @@
 <ion-header>
+  <!-- toolbar of the application screen-->
   <ion-toolbar>
+    <!-- back button of the toolbar-->
     <ion-buttons slot="start">
       <ion-back-button defaultHref="product-list"></ion-back-button>
     </ion-buttons>
+     <!--title of the toolbar-->
     <ion-title>Edit Product</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<!--contain part of the screen-->
 <ion-content >
   <div style="height: 20px;"></div>
   <form [formGroup]="productFormGroup" novalidate>

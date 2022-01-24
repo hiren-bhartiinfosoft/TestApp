@@ -13,13 +13,14 @@ import { CommonService } from '../../provider/common.service';
   styleUrls: ['./edit-product.page.scss'],
 })
 export class EditProductPage implements OnInit {
-  itemId:any;
-  public  itemName: any = '';
-  sub:any;
 
-  isConnected=false;
-  private productFormGroup: FormGroup;
+   //variable declaration
+  public itemId:any;
+  public itemName: any = '';
+  public isConnected=false;
+  public productFormGroup: FormGroup;
 
+  // header option of the api call
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -30,6 +31,7 @@ export class EditProductPage implements OnInit {
     })
   }
 
+  // constructor of the class
   constructor(private route: ActivatedRoute,
     public formBuilder: FormBuilder,
     public networkService :NetworkService,
@@ -39,6 +41,8 @@ export class EditProductPage implements OnInit {
 
     }
 
+    
+  // over-ride ngOnInit method of page life cycle - get param data from route
   ngOnInit() {
     this.productFormGroup = this.formBuilder.group({
       itemName: ['', [Validators.required, Validators.minLength(2)]],
@@ -60,15 +64,14 @@ export class EditProductPage implements OnInit {
         .subscribe((connected: boolean) => {
             this.isConnected = connected;
         });
-      }
+  }
 
+  // input text change listener to set data in variable
   changeListener(text){
     this.itemName =text;
   }
 
-  
-
-   // call web api call with put body
+   // call update record web api put type with body param 
    updateProductCall(){
      if(this.itemName){
       const body = { title: this.itemName };

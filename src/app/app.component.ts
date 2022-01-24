@@ -7,11 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
-
+  // list of the drawer item
   Pages = [
     {
       title: 'Product',
       url: '/product-list',
+      icon: 'list-circle'
+    },
+    {
+      title: 'Arrange Data',
+      url: '/arrange-component',
       icon: 'list-circle'
     },
   ];

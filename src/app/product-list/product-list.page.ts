@@ -13,10 +13,11 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./product-list.page.scss'],
 })
 export class ProductListPage implements OnInit {
-
+ //variable declaration
   isConnected=false;
   productList:any;
 
+  // header option of the api call
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -27,6 +28,7 @@ export class ProductListPage implements OnInit {
     })
   }
 
+  // constructor of the class
   constructor(public networkService :NetworkService,
     public alertService:AlertService,
     public http: HttpClient,
@@ -35,6 +37,7 @@ export class ProductListPage implements OnInit {
     public router: Router
     ) { }
 
+  // over-ride ngOnInit method of page life cycle
   ngOnInit() {
     this.networkSubscriber();
     this.doCheckInternet();
@@ -49,6 +52,7 @@ export class ProductListPage implements OnInit {
         });
       }
   
+      // check the internet and api call
       async doCheckInternet(){
       if(this.isConnected){
         this.getProductListCall();
@@ -70,13 +74,12 @@ export class ProductListPage implements OnInit {
       });
     }
 
-    // open edit popup screen
+    // open edit product screen with param data pass
     editProductItem(data){
-      
       this.router.navigate(['/edit-product'], { queryParams: {itemId:data.id, itemName: data.title } });
     }
 
-// call delete product api and remove item from the list
+    // call delete product api and remove item from the list
     deleteProductItem(data){
       var url ="https://fakestoreapi.com/products/"+data.id;
      

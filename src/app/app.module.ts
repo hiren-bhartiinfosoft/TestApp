@@ -19,13 +19,20 @@ import { CommonService } from './../provider/common.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { HTTP } from '@ionic-native/http/ngx'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// for drag-drop list item
+import { DndModule } from 'ngx-drag-drop';
 
-
+// register module and provider of the application
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [ FormsModule  ,
-    ReactiveFormsModule,     BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [ 
+    FormsModule,
+    DndModule,
+    ReactiveFormsModule,
+    BrowserModule, 
+    HttpClientModule, 
+    IonicModule.forRoot(), AppRoutingModule],
   providers: [Network,
     NetworkService,
     AlertService,

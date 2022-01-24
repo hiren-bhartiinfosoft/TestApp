@@ -8,9 +8,10 @@ import { mapTo } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class NetworkService {
-
+ // variable declaration
   private online$: Observable<boolean> = undefined;
 
+  // constructor of the class
   constructor(public network: Network, public platform: Platform) {
       //  find the internet status
       this.online$ = Observable.create(observer => {
