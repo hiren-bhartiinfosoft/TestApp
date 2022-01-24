@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="product-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div style="height: 20px;"></div>
+  <form [formGroup]="productFormGroup" novalidate>
+    <ion-item style="border-color:black">
+  <ion-input [ngModel]="itemName" (ngModelChange)="changeListener($event)" formControlName="itemName" type="text" placeholder="Enter Product Name"></ion-input>
+</ion-item>
+<div style="height: 20px;"></div>
+  <ion-button  (click)="updateProductCall()">Submit</ion-button>
+  </form>
+</ion-content>

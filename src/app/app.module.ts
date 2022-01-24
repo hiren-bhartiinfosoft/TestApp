@@ -18,11 +18,14 @@ import { CommonService } from './../provider/common.service';
 // for web api call
 import { HttpClient, HttpClientModule } from '@angular/common/http'
 import { HTTP } from '@ionic-native/http/ngx'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [ FormsModule  ,
+    ReactiveFormsModule,     BrowserModule, HttpClientModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [Network,
     NetworkService,
     AlertService,

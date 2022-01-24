@@ -14,11 +14,5 @@ export class AppComponent {
       url: '/product-list',
       icon: 'list-circle'
     },
-    {
-      title: 'Home',
-      url: '/home',
-      icon: 'checkmark-done-circle'
-    },
-   
   ];
 }
